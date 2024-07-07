@@ -22,10 +22,10 @@ class Ship:
                      start: Tuple[int, int],
                      end: Tuple[int, int]) -> List[Deck]:
         decks: List[Deck] = []
-        if start[0] == end[0]:  # Horizontal ship
+        if start[0] == end[0]:
             for col in range(start[1], end[1] + 1):
                 decks.append(Deck(start[0], col))
-        else:  # Vertical ship
+        else:
             for row in range(start[0], end[0] + 1):
                 decks.append(Deck(row, start[1]))
         return decks
