@@ -81,8 +81,10 @@ class Battleship:
             length: int = len(ship.decks)
             if length in counts:
                 counts[length] += 1
-        if counts[1] != 4 or counts[2] != 3 or \
-                counts[3] != 2 or counts[4] != 1:
+        if (
+                counts
+                [1] != 4 or counts[2] != 3 or counts[3] != 2 or counts[4] != 1
+        ):
             raise ValueError("Invalid number of ships of each type")
         self._check_no_neighbors()
 
@@ -99,8 +101,10 @@ class Battleship:
                         deck.row + direction[0],
                         deck.column + direction[1]
                     )
-                    if neighbor in self.field and \
-                            self.field[neighbor] != ship:
-                        raise \
-                            ValueError("Ships are located "
-                                       "in neighboring cells")
+                    if (
+                            neighbor
+                            in self.field and self.field[neighbor] != ship
+                    ):
+                        raise ValueError(
+                            "Ships are located in neighboring cells"
+                        )
